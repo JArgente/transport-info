@@ -7,7 +7,9 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import net.ddns.quantictime.transport_app.business_object.FinalDetail;
 import net.ddns.quantictime.transport_app.business_object.RequestDetail;
+import net.ddns.quantictime.transport_app.business_object.Station;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -19,7 +21,7 @@ import java.util.List;
 
 public class RequestDetailAdapter extends BaseAdapter {
 
-    private List<RequestDetail> listaDetails = new ArrayList<>();
+    private List<FinalDetail> listaDetails = new ArrayList<>();
 
     @Override
     public int getCount() {
@@ -27,7 +29,7 @@ public class RequestDetailAdapter extends BaseAdapter {
     }
 
     @Override
-    public RequestDetail getItem(int position) {
+    public FinalDetail getItem(int position) {
         if (position < 0 || position >= listaDetails.size()) {
             return null;
         } else {
@@ -48,10 +50,11 @@ public class RequestDetailAdapter extends BaseAdapter {
         return view;
     }
 
-    public void setNextArrivals(@Nullable RequestDetail arrival) {
+    public void setNextArrivals(@Nullable FinalDetail arrival) {
         if (arrival == null) {
             return;
         }
+
         listaDetails.add(arrival);
         notifyDataSetChanged();
     }
@@ -67,13 +70,16 @@ public class RequestDetailAdapter extends BaseAdapter {
     private static class RequestDetailViewHolder {
 
         private TextView estimatedTime;
+        private TextView stationName;
 
         public RequestDetailViewHolder(View view) {
             estimatedTime = (TextView) view.findViewById(R.id.estimated_time);
+            stationName = (TextView) view.findViewById(R.id.station_name);
         }
 
-        public void setRequestDetail(RequestDetail requestDetail) {
-            estimatedTime.setText(requestDetail.getWaitTime());
+        public void setRequestDetail(FinalDetail detail) {
+            estimatedTime.setText(detail.getNextArrivals());
+            stationName.setText(detail.getName());
         }
     }
 }

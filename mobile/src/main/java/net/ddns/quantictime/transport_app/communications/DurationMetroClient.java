@@ -2,13 +2,10 @@ package net.ddns.quantictime.transport_app.communications;
 
 import android.support.annotation.NonNull;
 
-import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import net.ddns.quantictime.transport_app.business_object.Station;
-
-import java.util.List;
 
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
@@ -19,13 +16,13 @@ import rx.Observable;
  * Created by jorge on 16/01/2018.
  */
 
-public class NextArrivalsClient {
+public class DurationMetroClient {
     private static final String TRANSPORT_BASE_URL = "https://api.interurbanos.welbits.com/v1/";
 
-    private static NextArrivalsClient instance;
+    private static DurationMetroClient instance;
     private NextArrivalsService service;
 
-    private NextArrivalsClient() {
+    private DurationMetroClient() {
         final Gson gson =
                 new GsonBuilder().create();
         final Retrofit retrofit = new Retrofit.Builder().baseUrl(TRANSPORT_BASE_URL)
@@ -35,17 +32,14 @@ public class NextArrivalsClient {
         service = retrofit.create(NextArrivalsService.class);
     }
 
-    public static NextArrivalsClient getInstance() {
+    public static DurationMetroClient getInstance() {
         if (instance == null) {
-            instance = new NextArrivalsClient();
+            instance = new DurationMetroClient();
         }
         return instance;
     }
 
-    public Observable<Station> getNextArrivals(@NonNull List<String> stops) {
-        Observable<Station> observableStations=service.getNextArrivals(stops.get(0));
-        for(int i=1;i<stops.size();i++)
-            observableStations=observableStations.concatWith(service.getNextArrivals(stops.get(i)));
-        return observableStations;
+    public Observable<Station> getNextArrivals(@NonNull String stop) {
+        return service.getNextArrivals(stop);
     }
 }

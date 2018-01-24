@@ -5,14 +5,20 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.ListView;
 
+import net.ddns.quantictime.transport_app.business_object.FinalDetail;
 import net.ddns.quantictime.transport_app.business_object.RequestDetail;
 import net.ddns.quantictime.transport_app.business_object.Station;
 import net.ddns.quantictime.transport_app.communications.NextArrivalsClient;
+
+import java.util.Arrays;
+import java.util.List;
 
 import rx.Observable;
 import rx.Observer;
 import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
+import rx.functions.Action2;
+import rx.functions.Func0;
 import rx.functions.Func1;
 import rx.schedulers.Schedulers;
 
@@ -30,7 +36,8 @@ public class MainActivity extends AppCompatActivity {
         final ListView listView = (ListView) findViewById(R.id.list_view_details);
         listView.setAdapter(adapter);
 
-        getTransportDetails("10-14");
+        getTransportDetails(Arrays.asList("10-14","4-202","5-24"), Arrays.asList("Humanes", "Fuenlabrada"));
+
     }
 
     @Override
@@ -41,25 +48,23 @@ public class MainActivity extends AppCompatActivity {
         super.onDestroy();
     }
 
-    private void getTransportDetails(String stop) {
+    private void getTransportDetails(final List<String> stops, final List<String> direction) {
         subscription = NextArrivalsClient.getInstance()
-                .getNextArrivals(stop)
-                .flatMap(new Func1<Station, Observable<RequestDetail>>() {
+                .getNextArrivals(stops)
+                .map(new Func1<Station, FinalDetail>() {
                     @Override
-                    public Observable<RequestDetail> call(Station station) {
-                        return Observable.from(station.getLines());
-                    }
-                })
-                .filter(new Func1<RequestDetail, Boolean>() {
-
-                    @Override
-                    public Boolean call(RequestDetail o) {
-                        return o.getLineBound().equals("Colonia Jardin");
+                    public FinalDetail call(Station station) {
+                        String arrivals="";
+                        for(RequestDetail details: station.getLines()){
+                            if(direction.contains(details.getLineBound()))
+                                arrivals=arrivals+"  "+details.getWaitTime();
+                        }
+                        return new FinalDetail(station.getStopName(), arrivals);
                     }
                 })
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<RequestDetail>() {
+                .subscribe(new Observer<FinalDetail>() {
                     @Override public void onCompleted() {
                         Log.d(TAG, "In onCompleted()");
                     }
@@ -69,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
                         Log.d(TAG, "In onError()");
                     }
 
-                    @Override public void onNext(RequestDetail details) {
+                    @Override public void onNext(FinalDetail details) {
                         Log.d(TAG, "In onNext()");
                         adapter.setNextArrivals(details);
                     }

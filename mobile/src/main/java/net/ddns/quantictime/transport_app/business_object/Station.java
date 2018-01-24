@@ -11,18 +11,18 @@ import java.util.List;
 public class Station {
 
     private final RequestDetail[] lines;
-    private final String stopNumber;
+    private final String stopName;
 
-    public Station(RequestDetail[] lines, String stopNumber){
-        this.lines=lines; this.stopNumber=stopNumber;
+    public Station(RequestDetail[] lines, String stopName){
+        this.lines=lines; this.stopName=stopName;
     }
 
     public RequestDetail[] getLines(){
         return this.lines;
     }
 
-    public String getStopNumber(){
-        return this.stopNumber;
+    public String getStopName(){
+        return this.stopName;
     }
 
 }
