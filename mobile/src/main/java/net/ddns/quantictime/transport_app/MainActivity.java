@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         final ListView listView = (ListView) findViewById(R.id.list_view_details);
         listView.setAdapter(adapter);
 
-        getTransportDetails(Arrays.asList("10-14","4-202","5-24"), Arrays.asList("Humanes", "Fuenlabrada"));
+        getTransportDetails(Arrays.asList("10-14","4-202","5-24"), Arrays.asList("Colonia Jardin", "Puerta Del Sur","Humanes", "Fuenlabrada"));
 
     }
 
