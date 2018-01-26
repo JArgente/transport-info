@@ -5,18 +5,30 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.ListView;
 
+import net.ddns.quantictime.transport_info.business_object.BusInfo;
 import net.ddns.quantictime.transport_info.business_object.FinalDetail;
+import net.ddns.quantictime.transport_info.business_object.InfoBusesLoader;
 import net.ddns.quantictime.transport_info.business_object.RequestDetail;
 import net.ddns.quantictime.transport_info.business_object.Station;
 import net.ddns.quantictime.transport_info.communications.NextArrivalsClient;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
+import rx.Notification;
 import rx.Observer;
 import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
+import rx.functions.Action1;
+import rx.functions.Action2;
+import rx.functions.Func0;
 import rx.functions.Func1;
+import rx.functions.Func2;
 import rx.schedulers.Schedulers;
 
 public class MainActivity extends AppCompatActivity {
@@ -28,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
 
         final ListView listView = (ListView) findViewById(R.id.list_view_details);
@@ -60,6 +73,35 @@ public class MainActivity extends AppCompatActivity {
                         return new FinalDetail(station.getStopName(), arrivals);
                     }
                 })
+                .concatWith(InfoBusesLoader.getListBusInfo(this)
+                        .filter(new Func1<BusInfo, Boolean>() {
+                            @Override
+                            public Boolean call(BusInfo busInfo) {
+                                Calendar currentCal = Calendar.getInstance();
+                                DateFormat df= new SimpleDateFormat("HH:mm");
+                                Calendar cal=Calendar.getInstance();
+                                try {
+                                    cal.setTime(df.parse(busInfo.getHoraSalida()));
+                                } catch (ParseException e) {
+                                    e.printStackTrace();
+                                }
+                                cal.set(currentCal.get(Calendar.YEAR),currentCal.get(Calendar.MONTH),currentCal.get(Calendar.DATE));
+                                return cal.after(currentCal);
+                            }
+                        })
+                .limit(3)
+                        .reduce("", new Func2<String, BusInfo, String>() {
+                            @Override
+                            public String call(String s, BusInfo busInfo) {
+                                return s+"  "+busInfo.getHoraSalida();
+                            }
+                        })
+                .map(new Func1<String, FinalDetail>() {
+                    @Override
+                    public FinalDetail call(String busInfo) {
+                        return new FinalDetail("Méndez Álvaro", busInfo);
+                    }
+                }))
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<FinalDetail>() {
