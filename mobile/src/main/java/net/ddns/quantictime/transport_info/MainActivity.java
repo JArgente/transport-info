@@ -21,6 +21,7 @@ import java.util.Date;
 import java.util.List;
 
 import rx.Notification;
+import rx.Observable;
 import rx.Observer;
 import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
@@ -61,16 +62,27 @@ public class MainActivity extends AppCompatActivity {
     private void getTransportDetails(final List<String> stops, final List<String> direction) {
         subscription = NextArrivalsClient.getInstance()
                 .getNextArrivals(stops)
-                .map(new Func1<Station, FinalDetail>() {
-
+                .flatMap(new Func1<Station, Observable<FinalDetail>>() {
                     @Override
-                    public FinalDetail call(Station station) {
-                        String arrivals="";
-                        for(RequestDetail details: station.getLines()){
-                            if(direction.contains(details.getLineBound()))
-                                arrivals=arrivals+"  "+details.getWaitTime();
-                        }
-                        return new FinalDetail(station.getStopName(), arrivals);
+                    public Observable<FinalDetail> call(Station station) {
+                        final Station station2=station;
+                       return Observable.from(station.getLines()).filter(new Func1<RequestDetail, Boolean>() {
+                            @Override
+                            public Boolean call(RequestDetail requestDetail) {
+                                return direction.contains(requestDetail.getLineBound());
+                            }
+                        }).limit(3)
+                         .reduce("", new Func2<String, RequestDetail, String>() {
+                            @Override
+                            public String call(String s, RequestDetail requestDetail) {
+                                return s+"  "+requestDetail.getWaitTime();
+                            }
+                        }).map(new Func1<String, FinalDetail>() {
+                           @Override
+                           public FinalDetail call(String s) {
+                               return new FinalDetail(station2.getStopName(), s);
+                           }
+                       });
                     }
                 })
                 .concatWith(InfoBusesLoader.getListBusInfo(this)
