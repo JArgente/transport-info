@@ -1,5 +1,13 @@
 package net.ddns.quantictime.transport_info;
 
+import android.Manifest;
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -37,17 +45,82 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = MainActivity.class.getSimpleName();
     private RequestDetailAdapter adapter = new RequestDetailAdapter();
     private Subscription subscription;
+    private final String GFT="gft";
+    private final String FINCA="finca";
+    private final String VAR_NAME="place";
+    private final List<String> FINCA_PARADAS=Arrays.asList("10-14", "4-202", "5-24");
+    private final List<String> FINCA_DIRECCION=Arrays.asList("Colonia Jardin", "Puerta Del Sur", "Humanes", "Fuenlabrada");
+    private final List<String> GFT_PARADAS=Arrays.asList("5-64", "5-11");
+    private final List<String> GFT_DIRECCION=Arrays.asList("Aranjuez", "Alcalá De Henares", "Guadalajara", "Fuenlabrada", "Humanes",
+            "Príncipe Pío");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        final Location finca = new Location(FINCA);
+        final Location gft = new Location(GFT);
+        finca.setLatitude(40.420006);
+        finca.setLongitude(-3.8015323);
+
+        gft.setLatitude(40.4900041);
+        gft.setLongitude(-3.6914176);
+        // Acquire a reference to the system Location Manager
+        final LocationManager locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
+        // Define a listener that responds to location updates
+        LocationListener locationListener = new LocationListener() {
+            Location lastLocation=null;
+            public void onLocationChanged(Location location) {
+                // Called when a new location is found by the network location provider.
+                if (lastLocation == null || lastLocation.distanceTo(location) > 100) {
+                    lastLocation=location;
+                    adapter.initialize();
+                    SharedPreferences settings = getPreferences(0);
+                    SharedPreferences.Editor editor = settings.edit();
+
+                    if (location.distanceTo(finca) < 500) {
+                        editor.putString(VAR_NAME, FINCA);
+                        editor.commit();
+                        getTransportDetails(FINCA_PARADAS, FINCA_DIRECCION);
+                    } else if (location.distanceTo(gft) < 500) {
+                        editor.putString(VAR_NAME, GFT);
+                        editor.commit();
+                        getTransportDetails(GFT_PARADAS, GFT_DIRECCION);
+                    } else {
+                        String place = settings.getString(VAR_NAME, GFT);
+                        if (place.equals(FINCA))
+                            getTransportDetails(FINCA_PARADAS, FINCA_DIRECCION);
+                        else
+                            getTransportDetails(GFT_PARADAS, GFT_DIRECCION);
+                    }
+                }
+            }
+            public void onStatusChanged(String provider, int status, Bundle extras) {
+            }
+
+            public void onProviderEnabled(String provider) {
+            }
+
+            public void onProviderDisabled(String provider) {
+            }
+        };
+
+// Register the listener with the Location Manager to receive location updates
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
+        locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener);
 
         setContentView(R.layout.activity_main);
 
         final ListView listView = (ListView) findViewById(R.id.list_view_details);
         listView.setAdapter(adapter);
-
-        getTransportDetails(Arrays.asList("10-14","4-202","5-24"), Arrays.asList("Colonia Jardin", "Puerta Del Sur","Humanes", "Fuenlabrada"));
 
     }
 

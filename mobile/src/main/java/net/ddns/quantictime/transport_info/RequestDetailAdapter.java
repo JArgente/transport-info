@@ -56,6 +56,10 @@ public class RequestDetailAdapter extends BaseAdapter {
         notifyDataSetChanged();
     }
 
+    public void initialize(){
+        listaDetails.clear();
+    }
+
     private View createView(ViewGroup parent) {
         final LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         final View view = inflater.inflate(R.layout.item_request_detail, parent, false);
