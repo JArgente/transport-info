@@ -11,6 +11,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.Pair;
 import android.widget.ListView;
 
 import net.ddns.quantictime.transport_info.business_object.BusInfo;
@@ -49,10 +50,14 @@ public class MainActivity extends AppCompatActivity {
     private final String FINCA="finca";
     private final String VAR_NAME="place";
     private final List<String> FINCA_PARADAS=Arrays.asList("10-14", "4-202", "5-24");
-    private final List<String> FINCA_DIRECCION=Arrays.asList("Colonia Jardin", "Puerta Del Sur", "Humanes", "Fuenlabrada");
+    private final List<List<String>> FINCA_DIRECCION=Arrays.asList(
+            Arrays.asList("Colonia Jardin"),
+            Arrays.asList("Puerta Del Sur"),
+            Arrays.asList("Humanes", "Fuenlabrada"));
     private final List<String> GFT_PARADAS=Arrays.asList("5-64", "5-11");
-    private final List<String> GFT_DIRECCION=Arrays.asList("Aranjuez", "Alcalá De Henares", "Guadalajara", "Fuenlabrada", "Humanes",
-            "Príncipe Pío");
+    private final List<List<String>> GFT_DIRECCION=Arrays.asList(
+            Arrays.asList("Aranjuez", "Alcalá De Henares", "Guadalajara"),
+            Arrays.asList("Fuenlabrada", "Humanes", "Príncipe Pío"));
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -132,32 +137,39 @@ public class MainActivity extends AppCompatActivity {
         super.onDestroy();
     }
 
-    private void getTransportDetails(final List<String> stops, final List<String> direction) {
+    private void getTransportDetails(final List<String> stops, final List<List<String>> direction) {
         subscription = NextArrivalsClient.getInstance()
-                .getNextArrivals(stops)
-                .flatMap(new Func1<Station, Observable<FinalDetail>>() {
+                .getNextArrivals(stops).retry(3)
+                .zipWith(direction, new Func2<Station, List<String>, Pair<Station, List<String>>>() {
                     @Override
-                    public Observable<FinalDetail> call(Station station) {
-                        final Station station2=station;
-                       return Observable.from(station.getLines()).filter(new Func1<RequestDetail, Boolean>() {
+                    public Pair<Station, List<String>> call(Station station, List<String> strings) {
+                        return new Pair<>(station, strings);
+                    }
+                })
+                .flatMap(new Func1<Pair<Station, List<String>>, Observable<FinalDetail>>() {
+                    @Override
+                    public Observable<FinalDetail> call(Pair<Station, List<String>> station) {
+                        final Pair<Station, List<String>> par=station;
+                       return Observable.from(par.first.getLines()).filter(new Func1<RequestDetail, Boolean>() {
                             @Override
                             public Boolean call(RequestDetail requestDetail) {
-                                return direction.contains(requestDetail.getLineBound());
+                                return par.second.contains(requestDetail.getLineBound());
                             }
                         }).limit(3)
-                         .reduce("", new Func2<String, RequestDetail, String>() {
-                            @Override
-                            public String call(String s, RequestDetail requestDetail) {
-                                return s+"  "+requestDetail.getWaitTime();
-                            }
-                        }).map(new Func1<String, FinalDetail>() {
+                               .reduce("", new Func2<String, RequestDetail, String>() {
+                                   @Override
+                                   public String call(String s, RequestDetail requestDetail) {
+                                       return s+"  "+requestDetail.getWaitTime();
+                                   }
+                               }).map(new Func1<String, FinalDetail>() {
                            @Override
                            public FinalDetail call(String s) {
-                               return new FinalDetail(station2.getStopName(), s);
+                               return new FinalDetail(par.first.getStopName(), s);
                            }
                        });
                     }
                 })
+
                 .concatWith(InfoBusesLoader.getListBusInfo(this)
                         .filter(new Func1<BusInfo, Boolean>() {
                             @Override

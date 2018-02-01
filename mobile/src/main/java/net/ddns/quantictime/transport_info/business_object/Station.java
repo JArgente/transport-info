@@ -1,5 +1,7 @@
 package net.ddns.quantictime.transport_info.business_object;
 
+import java.util.List;
+
 /**
  * Created by jorge on 16/01/2018.
  */
@@ -20,5 +22,4 @@ public class Station {
     public String getStopName(){
         return this.stopName;
     }
-
 }
