@@ -1,0 +1,437 @@
+{
+ "stopName": "** Somosaguas Centro (E)**",
+ "lines": [
+  {
+   "waitTime": "06:15",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "06:25",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "06:35",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "06:45",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "06:55",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "07:05",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "07:11",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "07:17",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "07:23",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "07:29",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "07:35",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "07:41",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "07:47",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "07:53",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "07:59",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "08:05",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "08:11",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "08:17",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "08:23",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "08:29",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "08:35",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "08:41",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "08:47",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "08:53",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "08:59",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "09:05",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "09:11",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "09:17",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "09:23",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "09:29",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "09:35",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "09:41",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "09:47",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "09:53",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "09:59",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "10:12",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "10:25",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "10:38",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "10:51",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "11:04",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "11:17",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "11:30",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "11:43",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "11:56",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "12:09",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "12:22",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "12:35",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "12:48",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "13:01",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "13:14",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "13:27",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "13:40",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "13:53",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "14:06",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "14:19",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "14:32",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "14:45",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "14:58",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "15:11",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "15:24",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "15:37",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "15:50",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "16:03",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "16:16",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "16:29",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "16:42",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "16:55",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "17:08",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "17:21",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "17:34",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "17:41",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "17:49",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "17:56",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "18:04",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "18:11",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "18:19",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "18:26",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "18:34",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "18:41",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "18:49",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "18:56",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "19:04",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "19:11",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "19:19",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "19:26",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "19:34",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "19:41",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "19:49",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "19:56",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "20:04",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "20:17",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "20:30",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "20:43",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "20:56",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "21:09",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "21:27",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "21:40",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "21:53",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "22:09",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "22:22",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "22:35",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "23:05",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "23:35",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "00:05",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "00:35",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "01:05",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "01:35",
+   "lineBound": "Colonia Jardin"
+  },
+  {
+   "waitTime": "01:43",
+   "lineBound": "Colonia Jardin"
+  }
+ ]
+}

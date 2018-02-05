@@ -1,0 +1,521 @@
+{
+ "stopName": "** Ramon y Cajal (E)**",
+ "lines": [
+  {
+   "waitTime": "06:28",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "06:36",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "06:42",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "06:58",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "07:01",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "07:18",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "07:24",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "07:30",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "07:31",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "07:36",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "07:43",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "07:52",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "07:55",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "07:59",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "08:01",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "08:10",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "08:22",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "08:25",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "08:27",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "08:31",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "08:41",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "08:49",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "08:54",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "08:59",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "09:01",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "09:10",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "09:17",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "09:24",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "09:29",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "09:31",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "09:41",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "09:54",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "09:58",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "10:02",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "10:22",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "10:28",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "10:31",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "10:53",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "10:59",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "11:02",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "11:23",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "11:28",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "11:32",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "11:53",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "11:59",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "12:02",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "12:23",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "12:29",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "12:30",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "12:53",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "12:58",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "13:02",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "13:23",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "13:29",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "13:32",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "13:40",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "13:53",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "13:59",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "14:02",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "14:11",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "14:24",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "14:30",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "14:32",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "14:40",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "14:53",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "14:58",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "15:01",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "15:11",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "15:21",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "15:27",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "15:32",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "15:55",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "15:57",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "16:02",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "16:23",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "16:27",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "16:31",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "16:49",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "16:53",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "16:57",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "17:01",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "17:19",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "17:23",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "17:29",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "17:32",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "17:53",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "17:56",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "18:00",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "18:11",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "18:24",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "18:27",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "18:32",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "18:41",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "18:53",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "18:57",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "19:02",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "19:10",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "19:23",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "19:27",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "19:32",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "19:40",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "19:45",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "19:53",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "19:57",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "19:58",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "20:01",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "20:16",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "20:24",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "20:27",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "20:30",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "20:45",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "20:54",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "20:57",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "21:02",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "21:16",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "21:23",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "21:27",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "21:31",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "21:54",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "22:00",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "22:02",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "22:23",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "22:28",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "22:30",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "22:54",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "22:58",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "23:02",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "23:23",
+   "lineBound": "Guadalajara"
+  },
+  {
+   "waitTime": "23:31",
+   "lineBound": "Guadalajara"
+  }
+ ]
+}

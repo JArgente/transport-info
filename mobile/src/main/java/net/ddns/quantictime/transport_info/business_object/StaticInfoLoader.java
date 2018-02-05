@@ -6,32 +6,28 @@ import android.content.Context;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.List;
 
-import retrofit2.converter.gson.GsonConverterFactory;
 import rx.Observable;
 
 /**
  * Created by jorge on 26/01/2018.
  */
 
-public class InfoBusesLoader {
+public class StaticInfoLoader {
 
-    public static Observable<BusInfo> getListBusInfo(Context ctx) {
+    public static Observable<Station> getListBusInfo(Context ctx, String name) {
         GsonBuilder gsonBuilder = new GsonBuilder();
         Gson gson = gsonBuilder.create();
         InputStream is=null;
         try {
-            is= ctx.getAssets().open("infoBuses.json");
+            is= ctx.getAssets().open(name);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        BusInfo[] lista=gson.fromJson(new InputStreamReader(is), BusInfo[].class);
-        return Observable.from(lista);
+        Station lista=gson.fromJson(new InputStreamReader(is), Station.class);
+        return Observable.just(lista);
     }
 }

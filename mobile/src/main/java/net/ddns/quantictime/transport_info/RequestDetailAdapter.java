@@ -1,5 +1,6 @@
 package net.ddns.quantictime.transport_info;
 
+import android.graphics.Color;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -81,6 +82,8 @@ public class RequestDetailAdapter extends BaseAdapter {
         public void setRequestDetail(FinalDetail detail) {
             estimatedTime.setText(detail.getNextArrivals());
             stationName.setText(detail.getName());
+            if(detail.getName().charAt(0)=='*')
+                stationName.setTextColor(Color.RED);
         }
     }
 }
