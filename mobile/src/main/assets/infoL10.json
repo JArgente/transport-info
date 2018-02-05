@@ -1,0 +1,1365 @@
+{
+ "stopName": "** Colonia Jardín (E)**",
+ "lines": [
+ {
+  "waitTime":"06:08",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"06:14",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"06:20",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"06:26",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"06:32",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"06:38",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"06:44",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"06:50",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"06:56",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"07:02",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"07:05",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"07:09",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"07:12",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"07:16",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"07:19",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"07:23",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"07:26",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"07:30",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"07:33",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"07:36",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"07:39",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"07:42",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"07:45",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"07:48",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"07:51",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"07:54",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"07:57",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"08:00",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"08:03",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"08:06",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"08:09",
+  "lineBound":"Puerta Del Sur"
+ },
+  {
+  "waitTime":"08:12",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"08:15",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"08:18",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"08:21",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"08:24",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"08:27",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"08:30",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"08:33",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"08:36",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"08:39",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"08:42",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"08:45",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"08:48",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"08:51",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"08:54",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"08:57",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"09:00",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"09:03",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"09:06",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"09:09",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"09:12",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"09:15",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"09:18",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"09:21",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"09:24",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"09:27",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"09:30",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"09:35",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"09:40",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"09:45",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"09:50",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"09:55",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"10:00",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"10:05",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"10:10",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"10:15",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"10:20",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"10:25",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"10:30",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"10:35",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"10:40",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"10:45",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"10:50",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"10:55",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"11:00",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"11:05",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"11:10",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"11:15",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"11:20",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"11:25",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"11:30",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"11:35",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"11:40",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"11:45",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"11:50",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"11:55",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"12:00",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"12:05",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"12:10",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"12:15",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"12:20",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"12:25",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"12:30",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"12:35",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"12:40",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"12:45",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"12:50",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"12:55",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"13:00",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"13:05",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"13:10",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"13:15",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"06:08",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"06:14",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"06:20",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"06:26",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"06:32",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"06:38",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"06:44",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"06:50",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"06:56",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"07:02",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"07:05",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"07:09",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"07:12",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"07:16",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"07:19",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"07:23",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"07:26",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"07:30",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"07:33",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"07:36",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"07:39",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"07:42",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"07:45",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"07:48",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"07:51",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"07:54",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"07:57",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"08:00",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"08:03",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"08:06",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"08:09",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"08:12",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"08:15",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"08:18",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"08:21",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"08:24",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"08:27",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"08:30",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"08:33",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"08:36",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"08:39",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"08:42",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"08:45",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"08:48",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"08:51",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"08:54",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"08:57",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"09:00",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"09:03",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"09:06",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"09:09",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"09:12",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"09:15",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"09:18",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"09:21",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"09:24",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"09:27",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"09:30",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"09:35",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"09:40",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"09:45",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"09:50",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"09:55",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"10:00",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"10:05",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"10:10",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"10:15",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"10:20",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"10:25",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"10:30",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"10:35",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"10:40",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"10:45",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"10:50",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"10:55",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"11:00",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"11:05",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"11:10",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"11:15",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"11:20",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"11:25",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"11:30",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"11:35",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"11:40",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"11:45",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"11:50",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"11:55",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"12:00",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"12:05",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"12:10",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"12:15",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"12:20",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"12:25",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"12:30",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"12:35",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"12:40",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"12:45",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"12:50",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"12:55",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"13:00",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"13:05",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"13:10",
+  "lineBound":"Puerta Del Sur"
+ },
+ {
+  "waitTime":"13:15",
+  "lineBound":"Puerta Del Sur"
+ },
+  {
+   "waitTime":"13:20",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"13:25",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"13:30",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"13:35",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"13:40",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"13:45",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"13:50",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"13:55",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"14:00",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"14:05",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"14:10",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"14:15",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"14:20",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"14:25",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"14:30",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"14:35",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"14:40",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"14:45",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"14:50",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"14:55",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"15:00",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"15:05",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"15:10",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"15:15",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"15:20",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"15:25",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"15:30",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"15:35",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"15:40",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"15:45",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"15:50",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"15:55",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"16:00",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"16:05",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"16:10",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"16:15",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"16:20",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"16:25",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"16:30",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"16:35",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"16:40",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"16:45",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"16:50",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"16:55",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"17:00",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"17:05",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"17:10",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"17:15",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"17:20",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"17:25",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"17:30",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"17:35",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"17:40",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"17:45",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"17:50",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"17:55",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"18:00",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"18:04",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"18:08",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"18:12",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"18:16",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"18:20",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"18:24",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"18:28",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"18:32",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"18:36",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"18:40",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"18:44",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"18:48",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"18:52",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"18:56",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"19:00",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"19:04",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"19:08",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"19:12",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"19:16",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"19:20",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"19:24",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"19:28",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"19:32",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"19:36",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"19:40",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"19:44",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"19:48",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"19:52",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"19:56",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"20:00",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"20:06",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"20:12",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"20:18",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"20:24",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"20:30",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"20:36",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"20:42",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"20:48",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"20:54",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"21:00",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"21:06",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"21:12",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"21:18",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"21:24",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"21:30",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"21:36",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"21:42",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"21:48",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"21:54",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"22:00",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"22:03",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"22:10",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"22:18",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"22:25",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"22:33",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"22:40",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"22:48",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"22:55",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"23:03",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"23:10",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"23:18",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"23:25",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"23:33",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"23:40",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"23:48",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"23:55",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"00:03",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"00:10",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"00:18",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"00:25",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"00:34",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"00:49",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"01:04",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"01:19",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"01:34",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"01:49",
+   "lineBound":"Puerta Del Sur"
+  },
+  {
+   "waitTime":"02:04",
+   "lineBound":"Puerta Del Sur"
+  }
+]
+}

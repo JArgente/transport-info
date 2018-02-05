@@ -1,0 +1,417 @@
+{
+ "stopName": "** Cuatro Vientos (E)**",
+ "lines": [
+  {
+   "waitTime": "05:38",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "05:57",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "06:12",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "06:27",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "06:42",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "06:57",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "07:12",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "07:24",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "07:34",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "07:44",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "07:54",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "08:04",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "08:14",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "08:24",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "08:34",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "08:44",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "08:54",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "09:04",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "09:14",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "09:24",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "09:34",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "09:44",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "09:54",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "10:04",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "10:14",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "10:24",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "10:34",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "10:44",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "10:54",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "11:04",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "11:14",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "11:24",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "11:34",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "11:44",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "11:54",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "12:04",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "12:14",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "12:24",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "12:34",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "12:44",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "12:54",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "13:04",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "13:14",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "13:24",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "13:34",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "13:44",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "13:54",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "14:04",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "14:14",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "14:24",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "14:34",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "14:44",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "14:54",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "15:04",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "15:14",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "15:24",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "15:34",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "15:44",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "15:54",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "16:04",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "16:14",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "16:24",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "16:34",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "16:44",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "16:54",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "17:04",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "17:14",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "17:24",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "17:34",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "17:44",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "17:54",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "18:04",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "18:14",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "18:24",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "18:34",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "18:44",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "18:54",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "19:04",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "19:14",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "19:24",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "19:34",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "19:44",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "19:54",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "20:04",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "20:14",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "20:24",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "20:34",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "20:44",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "20:54",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "21:04",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "21:14",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "21:24",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "21:34",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "21:44",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "21:54",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "22:04",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "22:14",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "22:27",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "22:43",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "22:57",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "23:12",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "23:27",
+   "lineBound": "Fuenlabrada"
+  },
+  {
+   "waitTime": "23:55",
+   "lineBound": "Fuenlabrada"
+  }
+ ]
+}

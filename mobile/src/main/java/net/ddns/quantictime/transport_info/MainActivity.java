@@ -14,9 +14,9 @@ import android.util.Log;
 import android.util.Pair;
 import android.widget.ListView;
 
-import net.ddns.quantictime.transport_info.business_object.BusInfo;
+import net.ddns.quantictime.transport_info.business_object.StaticInfo;
 import net.ddns.quantictime.transport_info.business_object.FinalDetail;
-import net.ddns.quantictime.transport_info.business_object.InfoBusesLoader;
+import net.ddns.quantictime.transport_info.business_object.StaticInfoLoader;
 import net.ddns.quantictime.transport_info.business_object.RequestDetail;
 import net.ddns.quantictime.transport_info.business_object.Station;
 import net.ddns.quantictime.transport_info.communications.NextArrivalsClient;
@@ -26,17 +26,12 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
-import rx.Notification;
 import rx.Observable;
 import rx.Observer;
 import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
-import rx.functions.Action1;
-import rx.functions.Action2;
-import rx.functions.Func0;
 import rx.functions.Func1;
 import rx.functions.Func2;
 import rx.schedulers.Schedulers;
@@ -58,6 +53,9 @@ public class MainActivity extends AppCompatActivity {
     private final List<List<String>> GFT_DIRECCION=Arrays.asList(
             Arrays.asList("Aranjuez", "Alcalá De Henares", "Guadalajara"),
             Arrays.asList("Fuenlabrada", "Humanes", "Príncipe Pío"));
+
+    private final List<String> FINCA_FILES=Arrays.asList("/infoMLO.json","infoL10.json","/infoC5.json");
+    private final List<String> GFT_FILES=Arrays.asList("/infoC2-C3.json","infoC5-C1.json");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,17 +83,17 @@ public class MainActivity extends AppCompatActivity {
                     if (location.distanceTo(finca) < 500) {
                         editor.putString(VAR_NAME, FINCA);
                         editor.commit();
-                        getTransportDetails(FINCA_PARADAS, FINCA_DIRECCION);
+                        getTransportDetails(FINCA_PARADAS, FINCA_FILES, FINCA_DIRECCION);
                     } else if (location.distanceTo(gft) < 500) {
                         editor.putString(VAR_NAME, GFT);
                         editor.commit();
-                        getTransportDetails(GFT_PARADAS, GFT_DIRECCION);
+                        getTransportDetails(GFT_PARADAS, GFT_FILES, GFT_DIRECCION);
                     } else {
                         String place = settings.getString(VAR_NAME, GFT);
                         if (place.equals(FINCA))
-                            getTransportDetails(FINCA_PARADAS, FINCA_DIRECCION);
+                            getTransportDetails(FINCA_PARADAS, FINCA_FILES, FINCA_DIRECCION);
                         else
-                            getTransportDetails(GFT_PARADAS, GFT_DIRECCION);
+                            getTransportDetails(GFT_PARADAS, GFT_FILES, GFT_DIRECCION);
                     }
                 }
             }
@@ -137,9 +135,9 @@ public class MainActivity extends AppCompatActivity {
         super.onDestroy();
     }
 
-    private void getTransportDetails(final List<String> stops, final List<List<String>> direction) {
+    private void getTransportDetails(final List<String> stops, final List<String> files, final List<List<String>> direction) {
         subscription = NextArrivalsClient.getInstance()
-                .getNextArrivals(stops).retry(3)
+                .getNextArrivals(stops, files, this).retry(3)
                 .zipWith(direction, new Func2<Station, List<String>, Pair<Station, List<String>>>() {
                     @Override
                     public Pair<Station, List<String>> call(Station station, List<String> strings) {
@@ -170,35 +168,50 @@ public class MainActivity extends AppCompatActivity {
                     }
                 })
 
-                .concatWith(InfoBusesLoader.getListBusInfo(this)
-                        .filter(new Func1<BusInfo, Boolean>() {
+                .concatWith(StaticInfoLoader.getListBusInfo(this, "/infoBuses.json")
+                        .map(new Func1<Station, Station>() {
                             @Override
-                            public Boolean call(BusInfo busInfo) {
+                            public Station call(Station station) {
                                 Calendar currentCal = Calendar.getInstance();
                                 DateFormat df= new SimpleDateFormat("HH:mm");
                                 Calendar cal=Calendar.getInstance();
+                                int i=1;
                                 try {
-                                    cal.setTime(df.parse(busInfo.getHoraSalida()));
+                                    cal.setTime(df.parse(station.getLines()[0].getWaitTime()));
+                                    while(i< station.getLines().length && cal.before(currentCal)){
+                                        cal.setTime(df.parse(station.getLines()[i].getWaitTime()));
+                                        i++;
+                                    }
                                 } catch (ParseException e) {
                                     e.printStackTrace();
                                 }
-                                cal.set(currentCal.get(Calendar.YEAR),currentCal.get(Calendar.MONTH),currentCal.get(Calendar.DATE));
-                                return cal.after(currentCal);
+                                if(i<station.getLines().length)
+                                    return new Station(Arrays.copyOfRange(station.getLines(), i, station.getLines().length), station.getStopName());
+                                else
+                                    return new Station(new RequestDetail[0], station.getStopName());
                             }
                         })
-                .limit(3)
-                        .reduce("", new Func2<String, BusInfo, String>() {
+                        .limit(3)
+                        .flatMap(new Func1<Station, Observable<FinalDetail>>() {
                             @Override
-                            public String call(String s, BusInfo busInfo) {
-                                return s+"  "+busInfo.getHoraSalida();
+                            public Observable<FinalDetail> call(Station station) {
+                                final Station par=station;
+                                return Observable.from(par.getLines())
+                                        .limit(3)
+                                        .reduce("", new Func2<String, RequestDetail, String>() {
+                                            @Override
+                                            public String call(String s, RequestDetail requestDetail) {
+                                                return s+"  "+requestDetail.getWaitTime();
+                                            }
+                                        }).map(new Func1<String, FinalDetail>() {
+                                            @Override
+                                            public FinalDetail call(String s) {
+                                                return new FinalDetail(par.getStopName(), s);
+                                            }
+                                        });
                             }
                         })
-                .map(new Func1<String, FinalDetail>() {
-                    @Override
-                    public FinalDetail call(String busInfo) {
-                        return new FinalDetail("Méndez Álvaro", busInfo);
-                    }
-                }))
+                )
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<FinalDetail>() {
