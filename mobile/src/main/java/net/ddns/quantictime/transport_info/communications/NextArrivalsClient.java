@@ -66,8 +66,10 @@ public class NextArrivalsClient {
                             int i=1;
                             try {
                                 cal.setTime(df.parse(station.getLines()[0].getWaitTime()));
+                                cal.set(currentCal.get(Calendar.YEAR),currentCal.get(Calendar.MONTH),currentCal.get(Calendar.DATE));
                                 while(i< station.getLines().length && cal.before(currentCal)){
                                     cal.setTime(df.parse(station.getLines()[i].getWaitTime()));
+                                    cal.set(currentCal.get(Calendar.YEAR),currentCal.get(Calendar.MONTH),currentCal.get(Calendar.DATE));
                                     i++;
                                 }
                             } catch (ParseException e) {

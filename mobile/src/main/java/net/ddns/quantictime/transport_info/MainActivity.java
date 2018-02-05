@@ -32,6 +32,7 @@ import rx.Observable;
 import rx.Observer;
 import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
+import rx.functions.Action1;
 import rx.functions.Func1;
 import rx.functions.Func2;
 import rx.schedulers.Schedulers;
@@ -54,8 +55,8 @@ public class MainActivity extends AppCompatActivity {
             Arrays.asList("Aranjuez", "Alcalá De Henares", "Guadalajara"),
             Arrays.asList("Fuenlabrada", "Humanes", "Príncipe Pío"));
 
-    private final List<String> FINCA_FILES=Arrays.asList("/infoMLO.json","infoL10.json","/infoC5.json");
-    private final List<String> GFT_FILES=Arrays.asList("/infoC2-C3.json","infoC5-C1.json");
+    private final List<String> FINCA_FILES=Arrays.asList("infoMLO.json","infoL10.json","infoC5.json");
+    private final List<String> GFT_FILES=Arrays.asList("infoRyC.json","infoAtocha.json");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -167,8 +168,13 @@ public class MainActivity extends AppCompatActivity {
                        });
                     }
                 })
-
-                .concatWith(StaticInfoLoader.getListBusInfo(this, "/infoBuses.json")
+                .doOnNext(new Action1<FinalDetail>() {
+                    @Override
+                    public void call(FinalDetail finalDetail) {
+                        System.out.println(finalDetail.getNextArrivals());
+                    }
+                })
+                .concatWith(StaticInfoLoader.getListBusInfo(this, "infoBuses.json")
                         .map(new Func1<Station, Station>() {
                             @Override
                             public Station call(Station station) {
@@ -178,8 +184,10 @@ public class MainActivity extends AppCompatActivity {
                                 int i=1;
                                 try {
                                     cal.setTime(df.parse(station.getLines()[0].getWaitTime()));
+                                    cal.set(currentCal.get(Calendar.YEAR),currentCal.get(Calendar.MONTH),currentCal.get(Calendar.DATE));
                                     while(i< station.getLines().length && cal.before(currentCal)){
                                         cal.setTime(df.parse(station.getLines()[i].getWaitTime()));
+                                        cal.set(currentCal.get(Calendar.YEAR),currentCal.get(Calendar.MONTH),currentCal.get(Calendar.DATE));
                                         i++;
                                     }
                                 } catch (ParseException e) {
