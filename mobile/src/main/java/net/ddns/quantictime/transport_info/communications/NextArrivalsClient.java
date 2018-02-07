@@ -63,20 +63,20 @@ public class NextArrivalsClient {
                             Calendar currentCal = Calendar.getInstance();
                             DateFormat df= new SimpleDateFormat("HH:mm");
                             Calendar cal=Calendar.getInstance();
-                            int i=1;
+                            int j=1;
                             try {
                                 cal.setTime(df.parse(station.getLines()[0].getWaitTime()));
                                 cal.set(currentCal.get(Calendar.YEAR),currentCal.get(Calendar.MONTH),currentCal.get(Calendar.DATE));
-                                while(i< station.getLines().length && cal.before(currentCal)){
-                                    cal.setTime(df.parse(station.getLines()[i].getWaitTime()));
+                                while(j< station.getLines().length && cal.before(currentCal)){
+                                    cal.setTime(df.parse(station.getLines()[j].getWaitTime()));
                                     cal.set(currentCal.get(Calendar.YEAR),currentCal.get(Calendar.MONTH),currentCal.get(Calendar.DATE));
-                                    i++;
+                                    j++;
                                 }
                             } catch (ParseException e) {
                                 e.printStackTrace();
                             }
-                            if(i<station.getLines().length)
-                                return new Station(Arrays.copyOfRange(station.getLines(), i, station.getLines().length), station.getStopName());
+                            if(j<station.getLines().length)
+                                return new Station(Arrays.copyOfRange(station.getLines(), j-1, station.getLines().length), station.getStopName());
                             else
                                 return new Station(new RequestDetail[0], station.getStopName());
                         }

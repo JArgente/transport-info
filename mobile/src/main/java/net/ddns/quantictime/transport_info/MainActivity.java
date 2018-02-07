@@ -194,7 +194,7 @@ public class MainActivity extends AppCompatActivity {
                                     e.printStackTrace();
                                 }
                                 if(i<station.getLines().length)
-                                    return new Station(Arrays.copyOfRange(station.getLines(), i, station.getLines().length), station.getStopName());
+                                    return new Station(Arrays.copyOfRange(station.getLines(), i-1, station.getLines().length), station.getStopName());
                                 else
                                     return new Station(new RequestDetail[0], station.getStopName());
                             }
