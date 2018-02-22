@@ -27,6 +27,7 @@ import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import rx.Observable;
 import rx.Observer;
@@ -45,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
     private final String GFT="gft";
     private final String FINCA="finca";
     private final String VAR_NAME="place";
-    private final List<String> FINCA_PARADAS=Arrays.asList("10-14", "4-202", "5-24");
+    private final List<String> FINCA_PARADAS=Arrays.asList("10-15", "4-202", "5-24");
     private final List<List<String>> FINCA_DIRECCION=Arrays.asList(
             Arrays.asList("Colonia Jardin"),
             Arrays.asList("Puerta Del Sur"),
@@ -119,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
             // for ActivityCompat#requestPermissions for more details.
             return;
         }
-        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
+        locationManager.requestSingleUpdate(LocationManager.GPS_PROVIDER, locationListener, null);
 
         setContentView(R.layout.activity_main);
 
@@ -138,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void getTransportDetails(final List<String> stops, final List<String> files, final List<List<String>> direction) {
         subscription = NextArrivalsClient.getInstance()
-                .getNextArrivals(stops, files, this).retry(3)
+                .getNextArrivals(stops, files, this).timeout(3000, TimeUnit.MILLISECONDS).retry(3)
                 .zipWith(direction, new Func2<Station, List<String>, Pair<Station, List<String>>>() {
                     @Override
                     public Pair<Station, List<String>> call(Station station, List<String> strings) {
@@ -220,6 +221,17 @@ public class MainActivity extends AppCompatActivity {
                             }
                         })
                 )
+                .repeatWhen(new Func1<Observable<? extends Void>, Observable<?>>() {
+                    @Override
+                    public Observable<?> call(Observable<? extends Void> observable) {
+                        return observable.delay(1, TimeUnit.MINUTES).doOnNext(new Action1<Void>() {
+                            @Override
+                            public void call(Void aVoid) {
+                                adapter.initialize();
+                            }
+                        });
+                    }
+                })
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<FinalDetail>() {
