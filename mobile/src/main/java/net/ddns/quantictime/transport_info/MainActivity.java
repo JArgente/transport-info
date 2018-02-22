@@ -120,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
             // for ActivityCompat#requestPermissions for more details.
             return;
         }
-        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
+        locationManager.requestSingleUpdate(LocationManager.GPS_PROVIDER, locationListener, null);
 
         setContentView(R.layout.activity_main);
 
@@ -221,6 +221,17 @@ public class MainActivity extends AppCompatActivity {
                             }
                         })
                 )
+                .repeatWhen(new Func1<Observable<? extends Void>, Observable<?>>() {
+                    @Override
+                    public Observable<?> call(Observable<? extends Void> observable) {
+                        return observable.delay(1, TimeUnit.MINUTES).doOnNext(new Action1<Void>() {
+                            @Override
+                            public void call(Void aVoid) {
+                                adapter.initialize();
+                            }
+                        });
+                    }
+                })
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<FinalDetail>() {

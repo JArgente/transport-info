@@ -59,6 +59,7 @@ public class RequestDetailAdapter extends BaseAdapter {
 
     public void initialize(){
         listaDetails.clear();
+      //  notifyDataSetChanged();
     }
 
     private View createView(ViewGroup parent) {
