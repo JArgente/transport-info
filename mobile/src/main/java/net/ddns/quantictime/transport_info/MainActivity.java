@@ -109,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
-// Register the listener with the Location Manager to receive location updates
+        // Register the listener with the Location Manager to receive location updates
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
             //    ActivityCompat#requestPermissions
@@ -121,6 +121,12 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
         locationManager.requestSingleUpdate(LocationManager.GPS_PROVIDER, locationListener, null);
+        Location location= locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+        if (location.distanceTo(gft) < 500)
+            getTransportDetails(GFT_PARADAS, GFT_FILES, GFT_DIRECCION);
+        else
+            getTransportDetails(FINCA_PARADAS, FINCA_FILES, FINCA_DIRECCION);
+
 
         setContentView(R.layout.activity_main);
 
