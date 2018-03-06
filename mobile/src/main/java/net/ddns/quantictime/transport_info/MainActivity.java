@@ -26,8 +26,11 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Calendar;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
 
 import rx.Observable;
 import rx.Observer;
@@ -144,8 +147,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void getTransportDetails(final List<String> stops, final List<String> files, final List<List<String>> direction) {
+        final SharedPreferences settings=this.getPreferences(0);
         subscription = NextArrivalsClient.getInstance()
-                .getNextArrivals(stops, files, this).timeout(3000, TimeUnit.MILLISECONDS).retry(3)
+                .getNextArrivals(stops, files, this, direction.stream().flatMap(x->x.stream().limit(1)).collect(Collectors.toList())).timeout(3000, TimeUnit.MILLISECONDS).retry(3)
                 .zipWith(direction, new Func2<Station, List<String>, Pair<Station, List<String>>>() {
                     @Override
                     public Pair<Station, List<String>> call(Station station, List<String> strings) {
@@ -161,7 +165,8 @@ public class MainActivity extends AppCompatActivity {
                             public Boolean call(RequestDetail requestDetail) {
                                 return par.second.contains(requestDetail.getLineBound());
                             }
-                        }).limit(3)
+                        })
+                               .limit(3)
                                .reduce("", new Func2<String, RequestDetail, String>() {
                                    @Override
                                    public String call(String s, RequestDetail requestDetail) {
@@ -176,11 +181,16 @@ public class MainActivity extends AppCompatActivity {
                     }
                 })
                 .doOnNext(new Action1<FinalDetail>() {
-                    @Override
-                    public void call(FinalDetail finalDetail) {
-                        System.out.println(finalDetail.getNextArrivals());
-                    }
-                })
+                              @Override
+                              public void call(FinalDetail station) {
+
+                                  final SharedPreferences.Editor editor = settings.edit();
+                                  editor.putLong(station.getName() + "H", Calendar.getInstance().getTimeInMillis());
+                                  editor.putString(station.getName(), station.getNextArrivals());
+                                  editor.commit();
+                              }
+                          }
+                )
                 .concatWith(StaticInfoLoader.getListBusInfo(this, "infoBuses.json")
                         .map(new Func1<Station, Station>() {
                             @Override
