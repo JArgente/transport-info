@@ -7,6 +7,7 @@ import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.os.Handler;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -62,17 +63,22 @@ public class MainActivity extends AppCompatActivity {
     private final List<String> FINCA_FILES=Arrays.asList("infoMLO.json","infoL10.json","infoC5.json");
     private final List<String> GFT_FILES=Arrays.asList("infoRyC.json","infoAtocha.json");
 
+    Handler mHandler;
+    Location location;
+    final Location finca = new Location(FINCA);
+    final Location gft = new Location(GFT);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        final Location finca = new Location(FINCA);
-        final Location gft = new Location(GFT);
+        setContentView(R.layout.activity_main);
+
         finca.setLatitude(40.420006);
         finca.setLongitude(-3.8015323);
 
         gft.setLatitude(40.4900041);
         gft.setLongitude(-3.6914176);
-        // Acquire a reference to the system Location Manager
+
         final LocationManager locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
         // Define a listener that responds to location updates
         LocationListener locationListener = new LocationListener() {
@@ -112,7 +118,6 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
-        // Register the listener with the Location Manager to receive location updates
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
             //    ActivityCompat#requestPermissions
@@ -124,19 +129,43 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
         locationManager.requestSingleUpdate(LocationManager.GPS_PROVIDER, locationListener, null);
-        Location location= locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+        location= locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
         if (location.distanceTo(gft) < 500)
             getTransportDetails(GFT_PARADAS, GFT_FILES, GFT_DIRECCION);
         else
             getTransportDetails(FINCA_PARADAS, FINCA_FILES, FINCA_DIRECCION);
 
 
-        setContentView(R.layout.activity_main);
-
         final ListView listView = (ListView) findViewById(R.id.list_view_details);
         listView.setAdapter(adapter);
+        this.mHandler = new Handler();
+
+        this.mHandler.postDelayed(m_Runnable,60000);
 
     }
+
+    private final Runnable m_Runnable = new Runnable()
+    {
+        public void run()
+
+        {
+
+            // Acquire a reference to the system Location Manager
+
+
+
+            // Register the listener with the Location Manager to receive location updates
+
+            adapter.initialize();
+            if (location.distanceTo(gft) < 500)
+                getTransportDetails(GFT_PARADAS, GFT_FILES, GFT_DIRECCION);
+            else
+                getTransportDetails(FINCA_PARADAS, FINCA_FILES, FINCA_DIRECCION);
+
+            mHandler.postDelayed(m_Runnable, 60000);
+        }
+
+    };
 
     @Override
     protected void onDestroy() {
@@ -183,11 +212,12 @@ public class MainActivity extends AppCompatActivity {
                 .doOnNext(new Action1<FinalDetail>() {
                               @Override
                               public void call(FinalDetail station) {
-
-                                  final SharedPreferences.Editor editor = settings.edit();
-                                  editor.putLong(station.getName() + "H", Calendar.getInstance().getTimeInMillis());
-                                  editor.putString(station.getName(), station.getNextArrivals());
-                                  editor.commit();
+                                  if(station.getName().charAt(0)!='*') {
+                                      final SharedPreferences.Editor editor = settings.edit();
+                                      editor.putLong(station.getName() + "H", Calendar.getInstance().getTimeInMillis());
+                                      editor.putString(station.getName(), station.getNextArrivals());
+                                      editor.commit();
+                                  }
                               }
                           }
                 )
@@ -237,7 +267,7 @@ public class MainActivity extends AppCompatActivity {
                             }
                         })
                 )
-                .repeatWhen(new Func1<Observable<? extends Void>, Observable<?>>() {
+               /* .repeatWhen(new Func1<Observable<? extends Void>, Observable<?>>() {
                     @Override
                     public Observable<?> call(Observable<? extends Void> observable) {
                         return observable.delay(1, TimeUnit.MINUTES).doOnNext(new Action1<Void>() {
@@ -247,7 +277,7 @@ public class MainActivity extends AppCompatActivity {
                             }
                         });
                     }
-                })
+                })*/
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<FinalDetail>() {

@@ -12,6 +12,7 @@ import net.ddns.quantictime.transport_info.business_object.RequestDetail;
 import net.ddns.quantictime.transport_info.business_object.StaticInfo;
 import net.ddns.quantictime.transport_info.business_object.StaticInfoLoader;
 import net.ddns.quantictime.transport_info.business_object.Station;
+import net.ddns.quantictime.transport_info.util.Constants;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -95,19 +96,22 @@ public class NextArrivalsClient {
                                         return new Station(new RequestDetail[0], station.getStopName());
                                 }
                             })
-                    )));
+                    ).reduce((x,y)->{
+                        RequestDetail[] result = Arrays.copyOf(x.getLines(), x.getLines().length + y.getLines().length);
+                        System.arraycopy(y.getLines(), 0, result, x.getLines().length, y.getLines().length);
+                        return new Station(result, y.getStopName());})));
         return observableStations;
     }
 
     private Observable<Station> getAheadTime(Activity ctx, String station, String lineBound){
         SharedPreferences settings = ctx.getPreferences(0);
-        String times=settings.getString(station,null);
+        String times=settings.getString(Constants.myMap.get(station),null);
         Long time=Calendar.getInstance().getTimeInMillis();
-        Long timestamp=settings.getLong(station+"H", time);
+        Long timestamp=settings.getLong(Constants.myMap.get(station)+"H", time);
         final int minutes=new Long((time-timestamp)/60000).intValue();
         SharedPreferences.Editor editor = settings.edit();
-        List<RequestDetail> lista = Observable.from(times.split(" "))
-          .filter(x->x.matches("\\d*"))
+        List<RequestDetail> lista = times==null?new ArrayList<>():Observable.from(times.split(" "))
+          .filter(x->x.matches("\\d+"))
           .map(x->Integer.parseInt(x)-minutes)
           .filter(x->x>0)
           .map(x->new RequestDetail(x.toString()+" min", lineBound))
@@ -117,6 +121,6 @@ public class NextArrivalsClient {
         else
             editor.putInt("minutes", 0);
         editor.commit();
-        return Observable.just(new Station(lista.toArray(new RequestDetail[lista.size()]), station));
+        return Observable.just(new Station(lista.toArray(new RequestDetail[lista.size()]), "** "+Constants.myMap.get(station)+" (E)**"));
     }
 }
