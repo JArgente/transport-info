@@ -69,32 +69,30 @@ public class NextArrivalsClient {
         Observable<Station> observableStations=Observable.empty();
         for(int i=0;i<stops.size();i++)
             observableStations = observableStations.concatWith(service.getNextArrivals(stops.get(i))
-                    .onErrorResumeNext(getAheadTime(ctx,stops.get(i), lineBounds.get(i)).concatWith(StaticInfoLoader.getListBusInfo(ctx, fileNames.get(i)).map(new Func1<Station, Station>() {
-                                @Override
-                                public Station call(Station station) {
+                    .onErrorResumeNext(getAheadTime(ctx,stops.get(i), lineBounds.get(i)).concatWith(StaticInfoLoader.getListBusInfo(ctx, fileNames.get(i))
+                            .map(station-> {
                                     SharedPreferences settings = ctx.getPreferences(0);
-                                    int minutes=settings.getInt("minutes",0);
-                                    Calendar currentCal = Calendar.getInstance();
-                                    currentCal.add(Calendar.MINUTE, minutes);
-                                    DateFormat df = new SimpleDateFormat("HH:mm");
-                                    Calendar cal = Calendar.getInstance();
-                                    int j = 1;
-                                    try {
-                                        cal.setTime(df.parse(station.getLines()[0].getWaitTime()));
-                                        cal.set(currentCal.get(Calendar.YEAR), currentCal.get(Calendar.MONTH), currentCal.get(Calendar.DATE));
-                                        while (j < station.getLines().length && cal.before(currentCal)) {
-                                            cal.setTime(df.parse(station.getLines()[j].getWaitTime()));
+                                        int minutes=settings.getInt("minutes",0);
+                                        Calendar currentCal = Calendar.getInstance();
+                                        currentCal.add(Calendar.MINUTE, minutes);
+                                        DateFormat df = new SimpleDateFormat("HH:mm");
+                                        Calendar cal = Calendar.getInstance();
+                                        int j = 1;
+                                        try {
+                                            cal.setTime(df.parse(station.getLines()[0].getWaitTime()));
                                             cal.set(currentCal.get(Calendar.YEAR), currentCal.get(Calendar.MONTH), currentCal.get(Calendar.DATE));
-                                            j++;
+                                            while (j < station.getLines().length && cal.before(currentCal)) {
+                                                cal.setTime(df.parse(station.getLines()[j].getWaitTime()));
+                                                cal.set(currentCal.get(Calendar.YEAR), currentCal.get(Calendar.MONTH), currentCal.get(Calendar.DATE));
+                                                j++;
+                                            }
+                                        } catch (ParseException e) {
+                                            e.printStackTrace();
                                         }
-                                    } catch (ParseException e) {
-                                        e.printStackTrace();
-                                    }
-                                    if (j < station.getLines().length)
-                                        return new Station(Arrays.copyOfRange(station.getLines(), j - 1, station.getLines().length), station.getStopName());
-                                    else
-                                        return new Station(new RequestDetail[0], station.getStopName());
-                                }
+                                        if (j < station.getLines().length)
+                                            return new Station(Arrays.copyOfRange(station.getLines(), j - 1, station.getLines().length), station.getStopName());
+                                        else
+                                            return new Station(new RequestDetail[0], station.getStopName());
                             })
                     ).reduce((x,y)->{
                         RequestDetail[] result = Arrays.copyOf(x.getLines(), x.getLines().length + y.getLines().length);

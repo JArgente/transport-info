@@ -15,7 +15,6 @@ import android.util.Log;
 import android.util.Pair;
 import android.widget.ListView;
 
-import net.ddns.quantictime.transport_info.business_object.StaticInfo;
 import net.ddns.quantictime.transport_info.business_object.FinalDetail;
 import net.ddns.quantictime.transport_info.business_object.StaticInfoLoader;
 import net.ddns.quantictime.transport_info.business_object.RequestDetail;
@@ -27,9 +26,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Calendar;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
@@ -37,9 +34,6 @@ import rx.Observable;
 import rx.Observer;
 import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
-import rx.functions.Action1;
-import rx.functions.Func1;
-import rx.functions.Func2;
 import rx.schedulers.Schedulers;
 
 public class MainActivity extends AppCompatActivity {
@@ -149,13 +143,6 @@ public class MainActivity extends AppCompatActivity {
         public void run()
 
         {
-
-            // Acquire a reference to the system Location Manager
-
-
-
-            // Register the listener with the Location Manager to receive location updates
-
             adapter.initialize();
             if (location.distanceTo(gft) < 500)
                 getTransportDetails(GFT_PARADAS, GFT_FILES, GFT_DIRECCION);
@@ -179,39 +166,13 @@ public class MainActivity extends AppCompatActivity {
         final SharedPreferences settings=this.getPreferences(0);
         subscription = NextArrivalsClient.getInstance()
                 .getNextArrivals(stops, files, this, direction.stream().flatMap(x->x.stream().limit(1)).collect(Collectors.toList())).timeout(3000, TimeUnit.MILLISECONDS).retry(3)
-                .zipWith(direction, new Func2<Station, List<String>, Pair<Station, List<String>>>() {
-                    @Override
-                    public Pair<Station, List<String>> call(Station station, List<String> strings) {
-                        return new Pair<>(station, strings);
-                    }
-                })
-                .flatMap(new Func1<Pair<Station, List<String>>, Observable<FinalDetail>>() {
-                    @Override
-                    public Observable<FinalDetail> call(Pair<Station, List<String>> station) {
-                        final Pair<Station, List<String>> par=station;
-                       return Observable.from(par.first.getLines()).filter(new Func1<RequestDetail, Boolean>() {
-                            @Override
-                            public Boolean call(RequestDetail requestDetail) {
-                                return par.second.contains(requestDetail.getLineBound());
-                            }
-                        })
-                               .limit(3)
-                               .reduce("", new Func2<String, RequestDetail, String>() {
-                                   @Override
-                                   public String call(String s, RequestDetail requestDetail) {
-                                       return s+"  "+requestDetail.getWaitTime();
-                                   }
-                               }).map(new Func1<String, FinalDetail>() {
-                           @Override
-                           public FinalDetail call(String s) {
-                               return new FinalDetail(par.first.getStopName(), s);
-                           }
-                       });
-                    }
-                })
-                .doOnNext(new Action1<FinalDetail>() {
-                              @Override
-                              public void call(FinalDetail station) {
+                .zipWith(direction, (station, lista)->new Pair<>(station, lista))
+                .flatMap(par->Observable.from(par.first.getLines())
+                        .filter(requestDetail->par.second.contains(requestDetail.getLineBound()))
+                        .limit(3)
+                        .reduce("", (s, requestDetail)->s+"  "+requestDetail.getWaitTime())
+                        .map(s-> new FinalDetail(par.first.getStopName(), s)))
+                .doOnNext(station->{
                                   if(station.getName().charAt(0)!='*') {
                                       final SharedPreferences.Editor editor = settings.edit();
                                       editor.putLong(station.getName() + "H", Calendar.getInstance().getTimeInMillis());
@@ -219,12 +180,9 @@ public class MainActivity extends AppCompatActivity {
                                       editor.commit();
                                   }
                               }
-                          }
-                )
+                 )
                 .concatWith(StaticInfoLoader.getListBusInfo(this, "infoBuses.json")
-                        .map(new Func1<Station, Station>() {
-                            @Override
-                            public Station call(Station station) {
+                        .map(station->{
                                 Calendar currentCal = Calendar.getInstance();
                                 DateFormat df= new SimpleDateFormat("HH:mm");
                                 Calendar cal=Calendar.getInstance();
@@ -244,40 +202,13 @@ public class MainActivity extends AppCompatActivity {
                                     return new Station(Arrays.copyOfRange(station.getLines(), i-1, station.getLines().length), station.getStopName());
                                 else
                                     return new Station(new RequestDetail[0], station.getStopName());
-                            }
-                        })
+                            })
                         .limit(3)
-                        .flatMap(new Func1<Station, Observable<FinalDetail>>() {
-                            @Override
-                            public Observable<FinalDetail> call(Station station) {
-                                final Station par=station;
-                                return Observable.from(par.getLines())
+                        .flatMap(par->Observable.from(par.getLines())
                                         .limit(3)
-                                        .reduce("", new Func2<String, RequestDetail, String>() {
-                                            @Override
-                                            public String call(String s, RequestDetail requestDetail) {
-                                                return s+"  "+requestDetail.getWaitTime();
-                                            }
-                                        }).map(new Func1<String, FinalDetail>() {
-                                            @Override
-                                            public FinalDetail call(String s) {
-                                                return new FinalDetail(par.getStopName(), s);
-                                            }
-                                        });
-                            }
-                        })
+                                        .reduce("", (s, requestDetail)->s+"  "+requestDetail.getWaitTime())
+                                        .map(s->new FinalDetail(par.getStopName(), s)))
                 )
-               /* .repeatWhen(new Func1<Observable<? extends Void>, Observable<?>>() {
-                    @Override
-                    public Observable<?> call(Observable<? extends Void> observable) {
-                        return observable.delay(1, TimeUnit.MINUTES).doOnNext(new Action1<Void>() {
-                            @Override
-                            public void call(Void aVoid) {
-                                adapter.initialize();
-                            }
-                        });
-                    }
-                })*/
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<FinalDetail>() {
